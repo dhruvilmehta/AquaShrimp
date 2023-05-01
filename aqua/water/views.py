@@ -11,10 +11,9 @@ def index(request):
         pH = data.get("pH")
         Temperature = data.get("Temperature")
         tds = data.get("tds")
-        Salinity = data.get("Salinity")
-        y_pred = model.predict([[DO,pH,Temperature,tds,Salinity]])
+        y_pred = model.predict([[DO,pH,Temperature,tds]])
         print(y_pred)
-        print(DO,pH,Temperature,Salinity,tds)
+        print(DO,pH,Temperature,tds)
         if y_pred[0] == 1:
             y_pred = 'Healthy'
         else:
